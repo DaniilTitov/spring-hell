@@ -1,4 +1,4 @@
-package ru.spring.hell.data;
+package ru.spring.hell.data.dao;
 
 import lombok.Builder;
 import lombok.Data;
@@ -9,4 +9,5 @@ public class Person {
     private String id;
     private String firstName;
     private String lastName;
+    private Integer age;
 }

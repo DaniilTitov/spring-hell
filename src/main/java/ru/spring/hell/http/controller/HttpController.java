@@ -3,7 +3,7 @@ package ru.spring.hell.http.controller;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
-import ru.spring.hell.data.Person;
+import ru.spring.hell.data.dao.Person;
 import ru.spring.hell.http.model.CalculationRequest;
 import ru.spring.hell.http.model.CalculationResponse;
 import ru.spring.hell.http.model.PersonRequest;
@@ -42,13 +42,13 @@ public class HttpController {
         Person person = Person.builder()
                 .firstName(request.getFirstName())
                 .lastName(request.getLastName())
+                .age(request.getAge())
                 .build();
 
         Person saved = personService.save(person);
         return PersonResponse.builder()
                 .description("Successfully saved. Id = " + saved.getId())
                 .build();
-//        5e2b1f290747b64698aab2fb
     }
 
     @GetMapping("/person")
@@ -57,6 +57,5 @@ public class HttpController {
         return PersonResponse.builder()
                 .description("Successfully found. Id = " + person.getId() + ", First name = " + person.getFirstName())
                 .build();
-//        5e2b1f290747b64698aab2fb
     }
 }

@@ -12,4 +12,5 @@ import lombok.NoArgsConstructor;
 public class PersonRequest {
     private String firstName;
     private String lastName;
+    private Integer age;
 }
