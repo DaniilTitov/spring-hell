@@ -1,14 +1,14 @@
-package ru.spring.hell.http.service;
+package ru.spring.hell.service;
 
 import org.springframework.stereotype.Service;
 import ru.spring.hell.data.dao.Calculation;
 import ru.spring.hell.data.repository.CalculationRepository;
 
 @Service
-public class HttpService {
+public class CalculationService {
     private final CalculationRepository repository;
 
-    public HttpService(CalculationRepository repository) {
+    public CalculationService(CalculationRepository repository) {
         this.repository = repository;
     }
 

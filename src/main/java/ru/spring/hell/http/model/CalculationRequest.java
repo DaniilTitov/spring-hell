@@ -9,7 +9,7 @@ import javax.validation.constraints.NotBlank;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ExampleRequest {
+public class CalculationRequest {
     private Long firstValue;
     private Long secondValue;
 }
