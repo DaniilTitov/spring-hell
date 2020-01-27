@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- describing schema for sample xml -->
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://bear.technology">
+
+    <xs:element name="items"> <!-- root element will be <items> -->
+        <xs:complexType> <!-- it will be complex (there are complex and simple) -->
+            <xs:sequence> <!-- it will consists from sequence of other elements -->
+                <xs:element name="item" minOccurs="0"
+                            maxOccurs="unbounded"> <!-- there will be zero or more <item> elements in sequence -->
+                    <xs:complexType> <!-- they all have complex type -->
+                        <xs:sequence> <!-- each of them will have next sequence of elements -->
+                            <xs:element name="name" type="xs:string"
+                                        minOccurs="1"/> <!-- required (minOccurs="1") non empty (look for NonEmptyString at bottom) name field -->
+                            <xs:element name="diameter" type="xs:positiveInteger" minOccurs="1"/>
+                            <xs:element name="size" minOccurs="0" default=""> <!-- example of enum field -->
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:enumeration value=""/>
+                                        <xs:enumeration value="Big"/>
+                                        <xs:enumeration value="Small"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
