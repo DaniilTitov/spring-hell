@@ -10,12 +10,13 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 @Configuration
 @EnableMongoRepositories
 class ApplicationConfig {
-
-    public @Bean MongoClient mongoClient() {
+    @Bean
+    public MongoClient mongoClient() {
         return MongoClients.create();
     }
 
-    public @Bean MongoTemplate mongoTemplate() {
+    @Bean
+    public MongoTemplate mongoTemplate() {
         return new MongoTemplate(mongoClient(), "spring-hell");
     }
 }

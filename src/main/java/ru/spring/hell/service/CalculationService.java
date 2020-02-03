@@ -1,16 +1,14 @@
 package ru.spring.hell.service;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import ru.spring.hell.data.dao.Calculation;
+import ru.spring.hell.data.dto.Calculation;
 import ru.spring.hell.data.repository.CalculationRepository;
 
 @Service
+@RequiredArgsConstructor
 public class CalculationService {
     private final CalculationRepository repository;
-
-    public CalculationService(CalculationRepository repository) {
-        this.repository = repository;
-    }
 
     public void createCalculation(Long firstValue, Long secondValue) {
         Calculation calculation = new Calculation();

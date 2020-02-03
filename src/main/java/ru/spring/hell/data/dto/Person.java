@@ -1,7 +1,9 @@
-package ru.spring.hell.data.dao;
+package ru.spring.hell.data.dto;
 
 import lombok.Builder;
 import lombok.Data;
+
+import java.util.Objects;
 
 @Data
 @Builder

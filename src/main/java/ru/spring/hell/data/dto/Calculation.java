@@ -1,4 +1,4 @@
-package ru.spring.hell.data.dao;
+package ru.spring.hell.data.dto;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

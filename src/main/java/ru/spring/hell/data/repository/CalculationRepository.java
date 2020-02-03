@@ -4,7 +4,7 @@ import org.springframework.data.jpa.repository.query.Procedure;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
-import ru.spring.hell.data.dao.Calculation;
+import ru.spring.hell.data.dto.Calculation;
 
 @Repository
 public interface CalculationRepository extends CrudRepository<Calculation, Long> {
